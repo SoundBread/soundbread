@@ -7,7 +7,7 @@
     <script src="js/vendor/soundjs-0.6.2.min.js"></script>
     <script src="js/soundbread.js"></script>
     <script>
-      if (process) {
+      if (typeof process !== 'undefined') {
         window.$ = window.jQuery = require('./js/vendor/jquery-2.2.3.min.js');
 
         // Load desktop app specific js
