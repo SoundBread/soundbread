@@ -9,6 +9,12 @@
     <script>
       if (process) {
         window.$ = window.jQuery = require('./js/vendor/jquery-2.2.3.min.js');
+
+        // Load desktop app specific js
+        //var desktop = require('./js/desktop.js');
+        $.getScript('./js/desktop.js', function(){
+          desktop_run();
+        })
       }
       $(document).ready(init);
     </script>
@@ -62,16 +68,20 @@
     </header> -->
 
     <div id="content">
-      <div id="crickets" style="background-image:url(img/SPRITE_cricket.jpg)" class="soundItem gridBox" data-keycode="49">
+      <div id="crickets" style="background-image:url(img/SPRITE_cricket.jpg)"
+          class="soundItem gridBox" data-keycode="49" data-globalkeycode="F1">
         <div class="label">Crickets</div>
       </div>
-      <div id="downer" style="background-image:url(img/SPRITE_sadtrombone.jpg)" class="soundItem gridBox" data-keycode="50">
+      <div id="downer" style="background-image:url(img/SPRITE_sadtrombone.jpg)"
+          class="soundItem gridBox" data-keycode="50" data-globalkeycode="F2">
         <div class="label">Downer</div>
       </div>
-      <div id="rimshot" style="background-image:url(img/SPRITE_rimshot.jpg)" class="soundItem gridBox" data-keycode="51">
+      <div id="rimshot" style="background-image:url(img/SPRITE_rimshot.jpg)"
+          class="soundItem gridBox" data-keycode="51" data-globalkeycode="F3">
         <div class="label">Rimshot</div>
       </div>
-      <div id="gaaay" style="background-image:url(img/SPRITE_gaaay.jpg)" class="soundItem gridBox" data-keycode="52">
+      <div id="gaaay" style="background-image:url(img/SPRITE_gaaay.jpg)"
+          class="soundItem gridBox" data-keycode="52" data-globalkeycode="F4">
         <div class="label">Gaaay</div>
       </div>
     </div>
